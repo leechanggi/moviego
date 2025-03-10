@@ -5,7 +5,7 @@
 - 이주희
 - 이창기
 
-## 기획 / 디자인
+## 기획 / 디자인 
 https://www.figma.com/design/On6PGlvTjJSXbPEWuqEFdx/MOVIEGO?node-id=0-1&t=ROjukv8m7MKJNmFI-1
 
 ## 레포지토리
