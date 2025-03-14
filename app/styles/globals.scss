@@ -17,12 +17,13 @@ html, body {
 }
 
 .wrap {
+    margin: 0 auto;
     position: relative;
     width: 100%;
     max-width: 720px;
     overflow: hidden;
     font-size: 1.6rem;
-
+    box-shadow: 0 0 2rem rgba(0,0,0,0.1);
     .contents{
         width: 100%;
         padding: 12rem 0 15rem;

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button } from '@/app/components';
+import { SwiperMain } from '@/app/components';
 
 const Page = () => {
   return (
-    <section>
-      <Button>버튼</Button>
-    </section>
+    <>
+      <SwiperMain/>
+    </>
   );
 };
 
