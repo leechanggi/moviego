@@ -1,3 +1,38 @@
-@import 'base/reset';
+@use 'base/font' as *;
+@use 'base/reset' as *;
+@use 'utils/mixins' as *;
+// Swiper styles
+@use 'swiper/css';
+@use 'swiper/css/navigation';
+@use 'swiper/css/pagination';
+@use 'swiper/css/effect-coverflow';
 
-@import 'utils/mixins';
+// 사이즈를 rem으로 작업하기위한 셋팅 1rem == 10px
+html, body {
+    font-family: Pretendard, sans-serif;
+    position: relative;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.wrap {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    overflow: hidden;
+    font-size: 1.6rem;
+
+    .contents{
+        width: 100%;
+        padding: 12rem 0 15rem;
+    }
+}
+
+img{ width: 100%; }
+
+@media all and (max-width: 720px) {
+    html, body {
+      font-size: calc(100vw * 10/720); 
+    }
+}
