@@ -30,8 +30,8 @@ html, body {
     }
 }
 
-img{ width: 100%; }
-
+img{ width: 100%; height: auto; object-fit: cover;}
+svg{ display: block; width: 100%; height: auto; object-fit: cover;}
 @media all and (max-width: 720px) {
     html, body {
       font-size: calc(100vw * 10/720); 

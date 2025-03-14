@@ -7,6 +7,8 @@ import styles from './index.module.scss';
 // Swiper core and required modules
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import IconPlay from '/public/icon_play.svg';
+import IconStop from '/public/icon_stop.svg';
 
 const MainSlide = React.forwardRef<HTMLDivElement, Types.MainSlideProps>((props, ref) => {
   const { className = '', ...rest } = props;
@@ -47,9 +49,8 @@ const MainSlide = React.forwardRef<HTMLDivElement, Types.MainSlideProps>((props,
         <SwiperSlide><img src="main_slide05.jpg" /></SwiperSlide>
       </Swiper>
       <div className={styles.navigation}>
-        <div className="swiper-pagination">
-        </div>
-        <button type='button' className={styles.btn_play} onClick={swiperPlay}>{!isToggled ? <img src='icon_play.svg' alt="Play"/> : <img src='icon_stop.svg' alt="Stop"/> }</button>
+        <div className="swiper-pagination"></div>
+        <button type='button' className={styles.btn_play} onClick={swiperPlay}>{!isToggled ? <IconPlay alt='재생' /> : <IconStop alt='정지' /> }</button>
       </div>
     </div>
   );
