@@ -2,10 +2,10 @@
 @use 'base/reset' as *;
 @use 'utils/mixins' as *;
 // Swiper styles
-@use 'swiper/css';
-@use 'swiper/css/navigation';
-@use 'swiper/css/pagination';
-@use 'swiper/css/effect-coverflow';
+// @use 'swiper/css';
+// @use 'swiper/css/navigation';
+// @use 'swiper/css/pagination';
+// @use 'swiper/css/effect-coverflow';
 
 // 사이즈를 rem으로 작업하기위한 셋팅 1rem == 10px
 html, body {
