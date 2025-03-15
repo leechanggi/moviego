@@ -23,8 +23,17 @@ const MainSlide = React.forwardRef<HTMLDivElement, Types.MainSlideProps>((props,
       swiperInstance.autoplay.stop();
     }
   };
+
+  const msData = [
+    { img:'main_slide01.jpg', alt:'main01' },
+    { img:'main_slide01.jpg', alt:'main02' },
+    { img:'main_slide01.jpg', alt:'main03' },
+    { img:'main_slide01.jpg', alt:'main04' },
+    { img:'main_slide01.jpg', alt:'main05' }
+  ]
+
   return (
-    <div ref={ref} className={cn(styles.mainslide, className)} {...rest}>
+    <section ref={ref} className={cn(styles.mainslide, className)} {...rest}>
       <Swiper onSwiper={setSwiperInstance} className='mySwiper'
         modules={[Autoplay, EffectCoverflow, Pagination]}
         effect={'coverflow'}
@@ -42,17 +51,17 @@ const MainSlide = React.forwardRef<HTMLDivElement, Types.MainSlideProps>((props,
         pagination={{ el: '.swiper-pagination', clickable: true }}
         loop
       >
-        <SwiperSlide><img src="main_slide01.jpg" /></SwiperSlide>
-        <SwiperSlide><img src="main_slide02.jpg" /></SwiperSlide>
-        <SwiperSlide><img src="main_slide03.jpg" /></SwiperSlide>
-        <SwiperSlide><img src="main_slide04.jpg" /></SwiperSlide>
-        <SwiperSlide><img src="main_slide05.jpg" /></SwiperSlide>
+        {msData.map((item, index) => {
+          return (
+            <SwiperSlide><img src={item.img} alt={item.alt} /></SwiperSlide>
+          );
+        })}
       </Swiper>
       <div className={styles.navigation}>
         <div className="swiper-pagination"></div>
         <button type='button' className={styles.btn_play} onClick={swiperPlay}>{!isToggled ? <IconPlay alt='재생' /> : <IconStop alt='정지' /> }</button>
       </div>
-    </div>
+    </section>
   );
 });
 MainSlide.displayName = 'MainSlide';

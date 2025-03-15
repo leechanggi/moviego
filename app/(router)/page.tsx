@@ -4,7 +4,9 @@ import { SwiperMain } from '@/app/components';
 const Page = () => {
   return (
     <>
-      <SwiperMain/>
+      <main>
+        <SwiperMain/>
+      </main>
     </>
   );
 };
