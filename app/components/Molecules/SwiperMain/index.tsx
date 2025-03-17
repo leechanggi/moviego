@@ -11,7 +11,7 @@ import IconPlay from '/public/icon_play.svg';
 import IconStop from '/public/icon_stop.svg';
 
 const MainSlide = React.forwardRef<HTMLDivElement, Types.MainSlideProps>((props, ref) => {
-  const { className = '', ...rest } = props;
+  const {data, className = '', ...rest } = props;
   const [isToggled, setIsToggled] = useState(true);
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
@@ -23,14 +23,6 @@ const MainSlide = React.forwardRef<HTMLDivElement, Types.MainSlideProps>((props,
       swiperInstance.autoplay.stop();
     }
   };
-
-  const msData = [
-    { img:'main_slide01.jpg', alt:'main01' },
-    { img:'main_slide01.jpg', alt:'main02' },
-    { img:'main_slide01.jpg', alt:'main03' },
-    { img:'main_slide01.jpg', alt:'main04' },
-    { img:'main_slide01.jpg', alt:'main05' }
-  ]
 
   return (
     <section ref={ref} className={cn(styles.mainslide, className)} {...rest}>
@@ -51,11 +43,9 @@ const MainSlide = React.forwardRef<HTMLDivElement, Types.MainSlideProps>((props,
         pagination={{ el: '.swiper-pagination', clickable: true }}
         loop
       >
-        {msData.map((item, index) => {
-          return (
-            <SwiperSlide><img src={item.img} alt={item.alt} /></SwiperSlide>
-          );
-        })}
+        {data.map((slideItem, index) => (
+          <SwiperSlide><img src={slideItem.img} alt={slideItem.alt} /></SwiperSlide>
+        ))}
       </Swiper>
       <div className={styles.navigation}>
         <div className="swiper-pagination"></div>

@@ -1,6 +1,15 @@
 import React from 'react';
+import { SwiperProps } from 'swiper/react';
 
-type MainSlideElement = HTMLDivElement;
-type MainSlideProps = {} & React.HTMLProps<HTMLDivElement>;
+// slideItem 타입 정의
+type slideItem = {
+    img: string;
+    alt: string;
+};
 
-export type { MainSlideElement, MainSlideProps };
+// MainSlideProps 타입 정의
+type MainSlideProps = {
+    data: slideItem[]; // 데이터를 명확히 정의
+} & SwiperProps & React.HTMLProps<HTMLDivElement>; // SwiperProps와 HTMLProps를 확장
+
+export type { MainSlideProps };
